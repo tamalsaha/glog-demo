@@ -9,6 +9,7 @@
 
 ```console
 
+$ glide up -v
 $ go install -v
 
 $ glog-demo check -h
