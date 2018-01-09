@@ -1,5 +1,75 @@
 # glog-demo
 
+## `glog` Internals
+
+*Severity Levels*
+
+ref: https://github.com/golang/glog/blob/23def4e6c14b4da8ac2ed8007337bc5eb5007998/glog.go#L100
+
+```
+"INFO"    : 0
+"WARNING" : 1
+"ERROR"   : 2
+"FATAL"   : 3
+```
+
+*Flags*
+
+ref: https://github.com/golang/glog/blob/23def4e6c14b4da8ac2ed8007337bc5eb5007998/glog.go#L398
+
+```
+flag.BoolVar(&logging.toStderr, "logtostderr", false, "log to standard error instead of files")
+flag.BoolVar(&logging.alsoToStderr, "alsologtostderr", false, "log to standard error as well as files")
+flag.Var(&logging.verbosity, "v", "log level for V logs")
+flag.Var(&logging.stderrThreshold, "stderrthreshold", "logs at or above this threshold go to stderr")
+```
+
+*output*
+ref: https://github.com/golang/glog/blob/23def4e6c14b4da8ac2ed8007337bc5eb5007998/glog.go#L671
+```
+	} else if l.toStderr {
+		os.Stderr.Write(data)
+	} else {
+		if alsoToStderr || l.alsoToStderr || s >= l.stderrThreshold.get() {
+			os.Stderr.Write(data)
+		}
+```
+
+*V(x)*
+
+ref:
+- https://github.com/golang/glog/blob/23def4e6c14b4da8ac2ed8007337bc5eb5007998/glog.go#L1004
+- https://github.com/golang/glog/blob/23def4e6c14b4da8ac2ed8007337bc5eb5007998/glog.go#L1040
+
+```
+	if logging.verbosity.get() >= level {
+		return Verbose(true)
+	}
+```
+
+Notes:
+- V(x) are always output in `INFO` severity.
+- If `--logtostderr` is true, severity levels are not consulted. (this is default true with appscode/go/log)
+- `--stderrthreshold` is 2, ie, ERROR. So, glog.Error() logs are alway written.
+
+To control logging using severity (Not V levels), you need to set:
+
+```console
+# only log ERROR / FATAL
+glog-demo check --logtostderr=false --stderrthreshold=ERROR
+
+# only log INFO at V=0 / WARN / ERROR / FATAL
+glog-demo check --logtostderr=false --stderrthreshold=INFO
+
+# only log INFO at V=0 / WARN / ERROR / FATAL
+glog-demo check --logtostderr=true
+
+# only log INFO at V=0,1,2 / WARN / ERROR / FATAL
+glog-demo check --logtostderr=false --stderrthreshold=INFO --v=2
+
+```
+
+
 ## Demo Projects
 
 - https://github.com/tamalsaha/std-log-demo
