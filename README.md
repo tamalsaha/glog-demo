@@ -71,6 +71,18 @@ glog-demo check --logtostderr=false --stderrthreshold=INFO --v=2
 
 ```
 
+| func call               | severity, V |
+|-------------------------|-------------|
+| appscode/go/log.Debug   | INFO, V(4)  |
+| appscode/go/log.Info    | INFO, V(3)  |
+| appscode/go/log.Warning | INFO, V(2)  |
+| appscode/go/log.Error   | INFO, V(1)  |
+| appscode/go/log.Fatal   | INFO, V(0)  |
+| glog.Info               | INFO, V(0)  |
+| glog.Warning            | WARN        |
+| glog.Error              | ERROR       |
+| glog.Fatal              | FATAL       |
+
 
 ## Demo Projects
 
