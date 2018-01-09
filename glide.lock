@@ -1,0 +1,12 @@
+hash: 16e81c743a8a3b93d936454a81a6ac1a9cb432820ca810db113fbc8d00f042da
+updated: 2018-01-08T17:15:37.799763266-08:00
+imports:
+- name: github.com/golang/glog
+  version: 44145f04b68cf362d9c4df2182967c2275eaefed
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/spf13/cobra
+  version: b95ab734e27d33e0d8fbabf71ca990568d4e2020
+- name: github.com/spf13/pflag
+  version: e57e3eeb33f795204c1ca35f56c44f83227c6e66
+testImports: []
