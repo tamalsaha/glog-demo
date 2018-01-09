@@ -126,4 +126,81 @@ glog.V(2).Infoln_____
 glog.V(3).Infoln_____
 glog.V(4).Infoln_____
 
+$ glog-demo check --logtostderr=true --stderrthreshold=1
+2018/01/08 18:29:29 FLAG: --alsologtostderr="false"
+2018/01/08 18:29:29 FLAG: --analytics="true"
+2018/01/08 18:29:29 FLAG: --help="false"
+2018/01/08 18:29:29 FLAG: --log_backtrace_at=":0"
+2018/01/08 18:29:29 FLAG: --log_dir=""
+2018/01/08 18:29:29 FLAG: --logtostderr="true"
+2018/01/08 18:29:29 FLAG: --stderrthreshold="1"
+2018/01/08 18:29:29 FLAG: --v="0"
+2018/01/08 18:29:29 FLAG: --vmodule=""
+log.Println_____
+2018/01/08 18:29:29 node.Name
+glog.Infoln_____
+I0108 18:29:29.470069   15917 main.go:47] node.Name
+glog.Warningln_____
+W0108 18:29:29.470094   15917 main.go:50] node.Name
+glog.Errorln_____
+E0108 18:29:29.470108   15917 main.go:53] node.Name
+glog.V(0).Infoln_____
+I0108 18:29:29.470124   15917 main.go:58] node.Name
+glog.V(1).Infoln_____
+glog.V(2).Infoln_____
+glog.V(3).Infoln_____
+glog.V(4).Infoln_____
+
+$ glog-demo check --logtostderr=true --stderrthreshold=1 --v=1
+2018/01/08 18:30:12 FLAG: --alsologtostderr="false"
+2018/01/08 18:30:12 FLAG: --analytics="true"
+2018/01/08 18:30:12 FLAG: --help="false"
+2018/01/08 18:30:12 FLAG: --log_backtrace_at=":0"
+2018/01/08 18:30:12 FLAG: --log_dir=""
+2018/01/08 18:30:12 FLAG: --logtostderr="true"
+2018/01/08 18:30:12 FLAG: --stderrthreshold="1"
+2018/01/08 18:30:12 FLAG: --v="1"
+2018/01/08 18:30:12 FLAG: --vmodule=""
+log.Println_____
+2018/01/08 18:30:12 node.Name
+glog.Infoln_____
+I0108 18:30:12.341201   15972 main.go:47] node.Name
+glog.Warningln_____
+W0108 18:30:12.341217   15972 main.go:50] node.Name
+glog.Errorln_____
+E0108 18:30:12.341225   15972 main.go:53] node.Name
+glog.V(0).Infoln_____
+I0108 18:30:12.341234   15972 main.go:58] node.Name
+glog.V(1).Infoln_____
+I0108 18:30:12.341243   15972 main.go:61] node.Name
+glog.V(2).Infoln_____
+glog.V(3).Infoln_____
+glog.V(4).Infoln_____
+
+$ glog-demo check --logtostderr=true --stderrthreshold=1 --v=2
+2018/01/08 18:30:18 FLAG: --alsologtostderr="false"
+2018/01/08 18:30:18 FLAG: --analytics="true"
+2018/01/08 18:30:18 FLAG: --help="false"
+2018/01/08 18:30:18 FLAG: --log_backtrace_at=":0"
+2018/01/08 18:30:18 FLAG: --log_dir=""
+2018/01/08 18:30:18 FLAG: --logtostderr="true"
+2018/01/08 18:30:18 FLAG: --stderrthreshold="1"
+2018/01/08 18:30:18 FLAG: --v="2"
+2018/01/08 18:30:18 FLAG: --vmodule=""
+log.Println_____
+2018/01/08 18:30:18 node.Name
+glog.Infoln_____
+I0108 18:30:18.236725   15988 main.go:47] node.Name
+glog.Warningln_____
+W0108 18:30:18.236740   15988 main.go:50] node.Name
+glog.Errorln_____
+E0108 18:30:18.236750   15988 main.go:53] node.Name
+glog.V(0).Infoln_____
+I0108 18:30:18.236757   15988 main.go:58] node.Name
+glog.V(1).Infoln_____
+I0108 18:30:18.236765   15988 main.go:61] node.Name
+glog.V(2).Infoln_____
+I0108 18:30:18.236775   15988 main.go:64] node.Name
+glog.V(3).Infoln_____
+glog.V(4).Infoln_____
 ```
