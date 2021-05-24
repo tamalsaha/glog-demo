@@ -218,6 +218,7 @@ glog.V(4).Infoln_____
 
 ## klog flags
 
+```
   -add_dir_header
     	If true, adds the file directory to the header of the log messages
   -alsologtostderr
@@ -244,10 +245,11 @@ glog.V(4).Infoln_____
     	number for the log level verbosity
   -vmodule value
     	comma-separated list of pattern=N settings for file-filtered logging
-
+```
 
 ## glog flags
 
+```
   -alsologtostderr
       log to standard error as well as files
   -log_backtrace_at value
@@ -262,3 +264,4 @@ glog.V(4).Infoln_____
       log level for V logs
   -vmodule value
       comma-separated list of pattern=N settings for file-filtered logging
+```
